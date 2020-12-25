@@ -42,11 +42,11 @@ extension OrderViewModel{
         return order.email ?? ""
     }
     
-    var type: String{
-        return order.type!.rawValue.capitalized 
-    }
-    
-    var size: String{
-        return order.size!.rawValue.capitalized
-    }
+//    var type: String{
+//        return order.type!.rawValue.capitalized 
+//    }
+//    
+//    var size: String{
+//        return order.size!.rawValue.capitalized
+//    }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class OrdersTableViewController: UITableViewController {
+class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
     
     let orderListViewModel = OrderListViewModel()
     
@@ -20,18 +20,14 @@ class OrdersTableViewController: UITableViewController {
     
     private func populateOrder(){
         
-        guard let coffeeOrderUrl = URL.url else {
-            fatalError("URl was incorrect")
-        }
-        
-        let resource = Resource<[Order]>(url: coffeeOrderUrl)
-        
-        WebService().load(resource: resource) {[weak self] (result) in
+        WebService().load(resource: Order.all) {[weak self] (result) in
             
             switch result {
             
             case .success(let orders):
-                self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
+                self?.orderListViewModel.ordersViewModel = orders.map({ (order) -> OrderViewModel in
+                    return OrderViewModel.init(order: order)
+                })
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
@@ -58,4 +54,24 @@ extension OrdersTableViewController  {
         return cell
     }
     
+   
 }
+
+extension OrdersTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let  vc = segue.destination as? AddOrderViewController
+        vc?.delegate = self
+    }
+    
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController) {
+        
+        let orderVm = OrderViewModel(order: order)
+        self.orderListViewModel.ordersViewModel.append(orderVm)
+        self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.ordersViewModel.count - 1, section: 0)], with: .none)
+    }
+    
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController) {
+        
+    }
+}
+

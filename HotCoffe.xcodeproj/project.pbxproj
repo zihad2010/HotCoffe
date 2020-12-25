@@ -23,6 +23,9 @@
 		96A7EF612593B148009F6441 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7EF602593B148009F6441 /* AddOrderViewController.swift */; };
 		96A7EF662593B17E009F6441 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7EF652593B17E009F6441 /* WebService.swift */; };
 		96A7EF6C2593B669009F6441 /* JSONDecoder+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7EF6B2593B669009F6441 /* JSONDecoder+Decoder.swift */; };
+		96F82F182596428E008A0190 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F82F172596428E008A0190 /* AddCoffeeOrderViewModel.swift */; };
+		96F82F1D2596526E008A0190 /* CoffeTypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F82F1C2596526E008A0190 /* CoffeTypesCell.swift */; };
+		96F82F2525968B17008A0190 /* URLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F82F2425968B17008A0190 /* URLRequest+Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		96A7EF602593B148009F6441 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		96A7EF652593B17E009F6441 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		96A7EF6B2593B669009F6441 /* JSONDecoder+Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Decoder.swift"; sourceTree = "<group>"; };
+		96F82F172596428E008A0190 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
+		96F82F1C2596526E008A0190 /* CoffeTypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeTypesCell.swift; sourceTree = "<group>"; };
+		96F82F2425968B17008A0190 /* URLRequest+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Request.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				967E285625953405004DF63F /* OrderViewModel.swift */,
+				96F82F172596428E008A0190 /* AddCoffeeOrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				967E286D25954B32004DF63F /* OrdersTableViewCell.swift */,
+				96F82F1C2596526E008A0190 /* CoffeTypesCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				96A7EF6B2593B669009F6441 /* JSONDecoder+Decoder.swift */,
 				967E284425952823004DF63F /* URL+Url.swift */,
 				967E286725954A08004DF63F /* CellIdentifier.swift */,
+				96F82F2425968B17008A0190 /* URLRequest+Request.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,9 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				967E286825954A08004DF63F /* CellIdentifier.swift in Sources */,
+				96F82F182596428E008A0190 /* AddCoffeeOrderViewModel.swift in Sources */,
 				96A7EF1C2593B09D009F6441 /* AppDelegate.swift in Sources */,
 				967E284525952823004DF63F /* URL+Url.swift in Sources */,
 				96A7EF1E2593B09D009F6441 /* SceneDelegate.swift in Sources */,
+				96F82F2525968B17008A0190 /* URLRequest+Request.swift in Sources */,
 				96A7EF5C2593B132009F6441 /* OrdersTableViewController.swift in Sources */,
 				96A7EF662593B17E009F6441 /* WebService.swift in Sources */,
 				96A7EF612593B148009F6441 /* AddOrderViewController.swift in Sources */,
@@ -349,6 +360,7 @@
 				967E285725953405004DF63F /* OrderViewModel.swift in Sources */,
 				96A7EF6C2593B669009F6441 /* JSONDecoder+Decoder.swift in Sources */,
 				967E2840259520A0004DF63F /* Order.swift in Sources */,
+				96F82F1D2596526E008A0190 /* CoffeTypesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

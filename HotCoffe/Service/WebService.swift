@@ -18,23 +18,38 @@ enum Result<T,H> {
     case failure(H)
 }
 
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 typealias HandlerResult = Result<Decodable,NetworkError>
 
-struct Resource<T:Decodable> {
+struct Resource<T:Codable> {
     
     let url: URL
+    var httpMethod: HttpMethod = .get
+    var body: Data? = nil
+}
+
+extension Resource{
+//    init(url: URL) {
+//        self.url = url
+//    }
 }
 
 class WebService {
     
     func load<T:Decodable>(resource:Resource<T>,completion:@escaping(Result<T,NetworkError>)->Void )  {
         
-        URLSession.shared.dataTask(with: resource.url) {(data, reponse, error) in
+      
+        URLSession.shared.dataTask(with: URLRequest.requestWith(resource: resource)) {(data, reponse, error) in
             
             guard let data = data, error == nil else {
                 completion(.failure(.domainError))
                 return
             }
+            
             JSONDecoder.decodeData(model: T.self, data) {(result) in
                 
                 switch result{

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,7 +63,7 @@
                     <navigationItem key="navigationItem" title="Orders" id="NxI-A4-UhN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uQR-9U-Amg">
                             <connections>
-                                <segue destination="WLd-yC-4He" kind="presentation" id="jft-6y-Fcd"/>
+                                <segue destination="WPu-vG-YYL" kind="show" id="Xzg-0U-wSJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,16 +77,89 @@
             <objects>
                 <viewController id="WPu-vG-YYL" customClass="AddOrderViewController" customModule="HotCoffe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G20-6N-uPl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jm4-mH-P21">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="281"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeTypesCell" rowHeight="102" id="SVe-e8-r5q" customClass="CoffeTypesCell" customModule="HotCoffe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SVe-e8-r5q" id="YuD-vy-VrX" customClass="CoffeTypesCell" customModule="HotCoffe" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-na-Pyi">
+                                                    <rect key="frame" x="36" y="21" width="358" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qSN-na-Pyi" firstAttribute="top" secondItem="YuD-vy-VrX" secondAttribute="topMargin" constant="10" id="9Zi-h2-NRP"/>
+                                                <constraint firstItem="qSN-na-Pyi" firstAttribute="trailing" secondItem="YuD-vy-VrX" secondAttribute="trailingMargin" id="Dfy-G1-Bsd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qSN-na-Pyi" secondAttribute="bottom" constant="10" id="Me4-xF-m4T"/>
+                                                <constraint firstItem="qSN-na-Pyi" firstAttribute="leading" secondItem="YuD-vy-VrX" secondAttribute="leadingMargin" constant="16" id="Tv6-Wr-MWA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coffeeTypeLabel" destination="qSN-na-Pyi" id="wsv-sP-hdO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WPu-vG-YYL" id="3W0-Si-1jz"/>
+                                    <outlet property="delegate" destination="WPu-vG-YYL" id="SFo-9j-wno"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1gZ-GY-T8i">
+                                <rect key="frame" x="20" y="766" width="374" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-k7-xHe">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifo-Ym-mJk">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ync-kU-5CG"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1gZ-GY-T8i" firstAttribute="leading" secondItem="ync-kU-5CG" secondAttribute="leading" constant="20" id="49p-at-mVf"/>
+                            <constraint firstItem="ync-kU-5CG" firstAttribute="bottom" secondItem="1gZ-GY-T8i" secondAttribute="bottom" constant="20" id="Gbh-bZ-96h"/>
+                            <constraint firstItem="Jm4-mH-P21" firstAttribute="trailing" secondItem="ync-kU-5CG" secondAttribute="trailing" id="MsG-Eb-itl"/>
+                            <constraint firstItem="ync-kU-5CG" firstAttribute="trailing" secondItem="1gZ-GY-T8i" secondAttribute="trailing" constant="20" id="XGe-Xa-8yZ"/>
+                            <constraint firstItem="Jm4-mH-P21" firstAttribute="height" secondItem="G20-6N-uPl" secondAttribute="height" multiplier="0.313616" id="Xrq-Vs-Xlc"/>
+                            <constraint firstItem="Jm4-mH-P21" firstAttribute="leading" secondItem="ync-kU-5CG" secondAttribute="leading" id="kfK-PO-ndt"/>
+                            <constraint firstItem="Jm4-mH-P21" firstAttribute="top" secondItem="G20-6N-uPl" secondAttribute="top" id="q4i-hy-p4Z"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Order" id="XDl-qx-Kia"/>
+                    <navigationItem key="navigationItem" title="Add New Order" id="XDl-qx-Kia">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="t1c-I3-JAY">
+                            <connections>
+                                <action selector="save" destination="WPu-vG-YYL" id="fK4-jx-cHq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="ifo-Ym-mJk" id="l6Y-m1-ijy"/>
+                        <outlet property="nameTextField" destination="mpk-k7-xHe" id="EnP-2F-cB1"/>
+                        <outlet property="tableView" destination="Jm4-mH-P21" id="fJ8-lH-ah8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1t-WT-N0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057.971014492754" y="120.53571428571428"/>
+            <point key="canvasLocation" x="1811.594202898551" y="120.53571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QpV-Cx-KD0">
@@ -105,23 +179,10 @@
             </objects>
             <point key="canvasLocation" x="149.27536231884059" y="120.53571428571428"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="O2C-H8-YfV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WLd-yC-4He" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t9D-su-HWw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WPu-vG-YYL" kind="relationship" relationship="rootViewController" id="ckV-wf-C9J"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sr-aw-ix0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2147.826086956522" y="120.53571428571428"/>
-        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
