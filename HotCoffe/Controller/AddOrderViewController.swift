@@ -15,13 +15,23 @@ protocol AddCoffeeOrderDelegate {
 
 class AddOrderViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    private var addCoffeeOrderViewModel = AddCoffeeOrderViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var nameTextField: BindingTextField!{
+        didSet{
+            nameTextField.bind{self.addCoffeeOrderViewModel.name = $0}
+        }
+    }
+    @IBOutlet weak var emailTextField: BindingTextField!{
+        didSet{
+            emailTextField.bind{self.addCoffeeOrderViewModel.email = $0}
+        }
+    }
     
     
     private var coffeeSegmentedControll: UISegmentedControl!
-    private var addCoffeeOrderViewModel = AddCoffeeOrderViewModel()
     var delegate: AddCoffeeOrderDelegate?
     
     
@@ -66,13 +76,11 @@ class AddOrderViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func save(){
-        let name = nameTextField.text
-        let email = emailTextField.text
+        
+      
         let selsctedSize = self.coffeeSegmentedControll.titleForSegment(at: self.coffeeSegmentedControll.selectedSegmentIndex)
         guard let indexPath = self.tableView.indexPathForSelectedRow else { fatalError("Error in selecting coffee!")  }
-        
-        self.addCoffeeOrderViewModel.name = name
-        self.addCoffeeOrderViewModel.email = email
+    
         self.addCoffeeOrderViewModel.selectedSize = selsctedSize
         self.addCoffeeOrderViewModel.selectedType = self.addCoffeeOrderViewModel.types[indexPath.row]
         
