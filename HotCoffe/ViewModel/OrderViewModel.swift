@@ -41,12 +41,4 @@ extension OrderViewModel{
     var email: String{
         return order.email ?? ""
     }
-    
-    var type: String{
-        return order.type!.rawValue.capitalized 
-    }
-    
-    var size: String{
-        return order.size!.rawValue.capitalized
-    }
 }

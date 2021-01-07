@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876C991025A62C4A00113970 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C990F25A62C4A00113970 /* BindingTextField.swift */; };
+		876C991525A63E7C00113970 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C991425A63E7C00113970 /* DetailsViewController.swift */; };
 		967E2840259520A0004DF63F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E283F259520A0004DF63F /* Order.swift */; };
 		967E284525952823004DF63F /* URL+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E284425952823004DF63F /* URL+Url.swift */; };
 		967E285725953405004DF63F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E285625953405004DF63F /* OrderViewModel.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		876C990F25A62C4A00113970 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
+		876C991425A63E7C00113970 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		967E283F259520A0004DF63F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		967E284425952823004DF63F /* URL+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Url.swift"; sourceTree = "<group>"; };
 		967E285625953405004DF63F /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		876C990E25A62BC800113970 /* Custom Controlls */ = {
+			isa = PBXGroup;
+			children = (
+				876C990F25A62C4A00113970 /* BindingTextField.swift */,
+			);
+			path = "Custom Controlls";
+			sourceTree = "<group>";
+		};
 		967E283E25951FAD004DF63F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +168,7 @@
 		96A7EF1A2593B09D009F6441 /* HotCoffe */ = {
 			isa = PBXGroup;
 			children = (
+				876C990E25A62BC800113970 /* Custom Controlls */,
 				967E286C25954B00004DF63F /* Cell */,
 				967E2849259528C8004DF63F /* AppDelegate */,
 				967E2855259533E6004DF63F /* ViewModel */,
@@ -194,6 +207,7 @@
 			children = (
 				96A7EF5B2593B132009F6441 /* OrdersTableViewController.swift */,
 				96A7EF602593B148009F6441 /* AddOrderViewController.swift */,
+				876C991425A63E7C00113970 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,9 +368,11 @@
 				96A7EF1E2593B09D009F6441 /* SceneDelegate.swift in Sources */,
 				96F82F2525968B17008A0190 /* URLRequest+Request.swift in Sources */,
 				96A7EF5C2593B132009F6441 /* OrdersTableViewController.swift in Sources */,
+				876C991025A62C4A00113970 /* BindingTextField.swift in Sources */,
 				96A7EF662593B17E009F6441 /* WebService.swift in Sources */,
 				96A7EF612593B148009F6441 /* AddOrderViewController.swift in Sources */,
 				967E286E25954B32004DF63F /* OrdersTableViewCell.swift in Sources */,
+				876C991525A63E7C00113970 /* DetailsViewController.swift in Sources */,
 				967E285725953405004DF63F /* OrderViewModel.swift in Sources */,
 				96A7EF6C2593B669009F6441 /* JSONDecoder+Decoder.swift in Sources */,
 				967E2840259520A0004DF63F /* Order.swift in Sources */,
