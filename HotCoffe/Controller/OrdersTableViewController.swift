@@ -10,11 +10,21 @@ import UIKit
 
 class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
     
-   private let orderListViewModel = OrderListViewModel()
+    private let orderListViewModel = OrderListViewModel()
+    private var genericeDataSource: GenericDataSource<OrdersTableViewCell,OrderViewModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        displayAllOrder()
         populateOrder()
+    }
+    
+    private func displayAllOrder() {
+        self.genericeDataSource = GenericDataSource(cellIdentifier: "OrdersTableViewCell", items: self.orderListViewModel.ordersViewModel, configureCell: {(cell, vm) in
+            cell.viewModel = vm
+        })
+        self.tableView.dataSource = self.genericeDataSource
     }
     
     private func populateOrder(){
@@ -27,6 +37,7 @@ class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
                 self?.orderListViewModel.ordersViewModel = orders.map({ (order) -> OrderViewModel in
                     return OrderViewModel.init(order: order)
                 })
+                self?.genericeDataSource.updateItems((self?.orderListViewModel.ordersViewModel)!)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
@@ -35,25 +46,6 @@ class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
             }
         }
     }
-}
-extension OrdersTableViewController  {
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.orderListViewModel.numberOfRows
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrdersTableViewCell", for: indexPath) as! OrdersTableViewCell
-        cell.viewModel = orderListViewModel.orderViewModel(at: indexPath.row)
-        return cell
-    }
-    
-   
 }
 
 extension OrdersTableViewController {
@@ -75,7 +67,7 @@ extension OrdersTableViewController {
     }
     
     private func prepareSegueForDetailsTableViewController(segue: UIStoryboardSegue) {
-       
+        
         guard let detailsVc = segue.destination as? DetailsViewController,let indexPath = self.tableView.indexPathForSelectedRow else {
             return
         }
@@ -88,6 +80,7 @@ extension OrdersTableViewController {
         
         let orderVm = OrderViewModel(order: order)
         self.orderListViewModel.ordersViewModel.append(orderVm)
+        self.genericeDataSource.updateItems((self.orderListViewModel.ordersViewModel))
         self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.ordersViewModel.count - 1, section: 0)], with: .none)
     }
     

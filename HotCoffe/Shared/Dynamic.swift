@@ -7,6 +7,8 @@
 
 import Foundation
 
+// type Eraser
+
 class Dynamic<T> {
     
     typealias  Listener = (T) -> ()

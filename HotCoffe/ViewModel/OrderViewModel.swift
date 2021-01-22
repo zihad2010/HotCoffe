@@ -17,15 +17,7 @@ class OrderListViewModel {
 }
 
 extension OrderListViewModel{
-    
-    var numberOfRows: Int{
-        return ordersViewModel.count
-    }
-    
-    func orderViewModel(at index: Int) -> OrderViewModel {
-        return self.ordersViewModel[index]
-    }
-    
+
     func modelAt(indexPath:IndexPath) -> OrderViewModel {
         return self.ordersViewModel[indexPath.row]
     }
