@@ -67,6 +67,7 @@ class AddOrderViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     private func setupUI(){
+        
         self.coffeeSegmentedControll = UISegmentedControl(items: self.addCoffeeOrderViewModel.sizes)
         self.coffeeSegmentedControll.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.coffeeSegmentedControll)
@@ -77,7 +78,6 @@ class AddOrderViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBAction func save(){
         
-      
         let selsctedSize = self.coffeeSegmentedControll.titleForSegment(at: self.coffeeSegmentedControll.selectedSegmentIndex)
         guard let indexPath = self.tableView.indexPathForSelectedRow else { fatalError("Error in selecting coffee!")  }
     

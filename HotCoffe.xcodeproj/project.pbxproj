@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		876C991025A62C4A00113970 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C990F25A62C4A00113970 /* BindingTextField.swift */; };
 		876C991525A63E7C00113970 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C991425A63E7C00113970 /* DetailsViewController.swift */; };
+		87E2D85A25BAB11000619551 /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2D85925BAB11000619551 /* OrderDetailsViewModel.swift */; };
+		87E2D86725BB4B8800619551 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2D86625BB4B8800619551 /* Dynamic.swift */; };
 		967E2840259520A0004DF63F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E283F259520A0004DF63F /* Order.swift */; };
 		967E284525952823004DF63F /* URL+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E284425952823004DF63F /* URL+Url.swift */; };
 		967E285725953405004DF63F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E285625953405004DF63F /* OrderViewModel.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		876C990F25A62C4A00113970 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
 		876C991425A63E7C00113970 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		87E2D85925BAB11000619551 /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
+		87E2D86625BB4B8800619551 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		967E283F259520A0004DF63F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		967E284425952823004DF63F /* URL+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Url.swift"; sourceTree = "<group>"; };
 		967E285625953405004DF63F /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +114,14 @@
 			path = "Custom Controlls";
 			sourceTree = "<group>";
 		};
+		87E2D86525BB4B6E00619551 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				87E2D86625BB4B8800619551 /* Dynamic.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		967E283E25951FAD004DF63F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 			children = (
 				967E285625953405004DF63F /* OrderViewModel.swift */,
 				96F82F172596428E008A0190 /* AddCoffeeOrderViewModel.swift */,
+				87E2D85925BAB11000619551 /* OrderDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +181,7 @@
 		96A7EF1A2593B09D009F6441 /* HotCoffe */ = {
 			isa = PBXGroup;
 			children = (
+				87E2D86525BB4B6E00619551 /* Shared */,
 				876C990E25A62BC800113970 /* Custom Controlls */,
 				967E286C25954B00004DF63F /* Cell */,
 				967E2849259528C8004DF63F /* AppDelegate */,
@@ -364,6 +378,7 @@
 				967E286825954A08004DF63F /* CellIdentifier.swift in Sources */,
 				96F82F182596428E008A0190 /* AddCoffeeOrderViewModel.swift in Sources */,
 				96A7EF1C2593B09D009F6441 /* AppDelegate.swift in Sources */,
+				87E2D86725BB4B8800619551 /* Dynamic.swift in Sources */,
 				967E284525952823004DF63F /* URL+Url.swift in Sources */,
 				96A7EF1E2593B09D009F6441 /* SceneDelegate.swift in Sources */,
 				96F82F2525968B17008A0190 /* URLRequest+Request.swift in Sources */,
@@ -374,6 +389,7 @@
 				967E286E25954B32004DF63F /* OrdersTableViewCell.swift in Sources */,
 				876C991525A63E7C00113970 /* DetailsViewController.swift in Sources */,
 				967E285725953405004DF63F /* OrderViewModel.swift in Sources */,
+				87E2D85A25BAB11000619551 /* OrderDetailsViewModel.swift in Sources */,
 				96A7EF6C2593B669009F6441 /* JSONDecoder+Decoder.swift in Sources */,
 				967E2840259520A0004DF63F /* Order.swift in Sources */,
 				96F82F1D2596526E008A0190 /* CoffeTypesCell.swift in Sources */,

@@ -10,8 +10,7 @@ import UIKit
 
 class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
     
-    let orderListViewModel = OrderListViewModel()
-    
+   private let orderListViewModel = OrderListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +59,29 @@ extension OrdersTableViewController  {
 extension OrdersTableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "AddOrderViewController"){
+            self.prepareSegueForOrderTableViewController(segue: segue)
+            
+        } else if(segue.identifier == "DetailsViewController") {
+            self.prepareSegueForDetailsTableViewController(segue: segue)
+        }
+    }
+    
+    private func prepareSegueForOrderTableViewController(segue: UIStoryboardSegue) {
+        
         let  vc = segue.destination as? AddOrderViewController
         vc?.delegate = self
+    }
+    
+    private func prepareSegueForDetailsTableViewController(segue: UIStoryboardSegue) {
+       
+        guard let detailsVc = segue.destination as? DetailsViewController,let indexPath = self.tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        let detailsVm = self.orderListViewModel.modelAt(indexPath: indexPath)
+        detailsVc.orderViewModel = OrderDetailsVm(orderVm: detailsVm)
     }
     
     func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController) {

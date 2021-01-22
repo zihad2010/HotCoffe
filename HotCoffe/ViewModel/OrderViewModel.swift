@@ -26,19 +26,30 @@ extension OrderListViewModel{
         return self.ordersViewModel[index]
     }
     
+    func modelAt(indexPath:IndexPath) -> OrderViewModel {
+        return self.ordersViewModel[indexPath.row]
+    }
 }
 
 struct OrderViewModel {
     let order: Order
 }
 
-extension OrderViewModel{
+extension OrderViewModel {
     
     var name: String {
         return order.name ?? ""
     }
     
-    var email: String{
+    var email: String {
         return order.email ?? ""
+    }
+    
+    var type: String {
+        return order.type ?? ""
+    }
+    
+    var size: String {
+        return order.size ?? ""
     }
 }

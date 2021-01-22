@@ -52,7 +52,7 @@
                                 <connections>
                                     <outlet property="emailLabel" destination="Kjm-Bp-ds2" id="26t-bF-jrR"/>
                                     <outlet property="nameLabel" destination="HJQ-yo-fNp" id="Nlx-U2-0mx"/>
-                                    <segue destination="xM6-0r-Zva" kind="show" id="GaO-J2-IuI"/>
+                                    <segue destination="xM6-0r-Zva" kind="show" identifier="DetailsViewController" id="GaO-J2-IuI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,7 +64,7 @@
                     <navigationItem key="navigationItem" title="Orders" id="NxI-A4-UhN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uQR-9U-Amg">
                             <connections>
-                                <segue destination="WPu-vG-YYL" kind="show" id="Xzg-0U-wSJ"/>
+                                <segue destination="WPu-vG-YYL" kind="show" identifier="AddOrderViewController" id="Xzg-0U-wSJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,27 +82,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="8NL-7a-13h">
-                                <rect key="frame" x="16" y="104" width="382" height="133"/>
+                                <rect key="frame" x="16" y="381.5" width="382" height="133"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t2-D4-j76">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t2-D4-j76">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68e-ah-RGR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68e-ah-RGR">
                                         <rect key="frame" x="0.0" y="37.5" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eO-Te-oZP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eO-Te-oZP">
                                         <rect key="frame" x="0.0" y="75" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrE-fF-PVM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrE-fF-PVM">
                                         <rect key="frame" x="0.0" y="112.5" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -114,9 +114,9 @@
                         <viewLayoutGuide key="safeArea" id="pQD-ht-Tk7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8NL-7a-13h" firstAttribute="centerY" secondItem="WwH-Yu-A4p" secondAttribute="centerY" id="48Z-qJ-H31"/>
                             <constraint firstItem="pQD-ht-Tk7" firstAttribute="trailing" secondItem="8NL-7a-13h" secondAttribute="trailing" constant="16" id="65h-jC-qSk"/>
                             <constraint firstItem="8NL-7a-13h" firstAttribute="leading" secondItem="pQD-ht-Tk7" secondAttribute="leading" constant="16" id="E7L-oL-AIf"/>
-                            <constraint firstItem="8NL-7a-13h" firstAttribute="top" secondItem="pQD-ht-Tk7" secondAttribute="top" constant="16" id="jA7-5q-0ps"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WhA-gl-X1z"/>
@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4y-kP-cMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="832"/>
+            <point key="canvasLocation" x="1057.9710144927537" y="831.69642857142856"/>
         </scene>
         <!--Add New Order-->
         <scene sceneID="ySr-T0-QfC">
